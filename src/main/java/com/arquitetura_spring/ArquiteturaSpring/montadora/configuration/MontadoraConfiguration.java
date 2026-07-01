@@ -4,11 +4,13 @@ import com.arquitetura_spring.ArquiteturaSpring.montadora.Motor;
 import com.arquitetura_spring.ArquiteturaSpring.montadora.TipoMotor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 
 @Configuration
 public class MontadoraConfiguration {
 
     @Bean(name = "motorAspirado")
+    @Primary // Caso eu tenha usado o @Autowired sem usar o @Qualifier, o Spring pegará esse @Bean por default
     public Motor motorAspirado() {
         var motor = new Motor();
         motor.setCavalos(120);

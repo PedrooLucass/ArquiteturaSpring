@@ -16,7 +16,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class TesteFabricaController {
 
     @Autowired
-    @Qualifier("motorTurbo") // Caso o @Bean esteja sem o (name = "blablabla") o Spring ainda consegue achar pelo próprio nome da função
+    // @Qualifier("motorTurbo") // Caso o @Bean esteja sem o (name = "blablabla") o Spring ainda consegue achar pelo próprio nome da função
+    @Hibrido
     private Motor motor;
 
     @PostMapping
